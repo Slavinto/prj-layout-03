@@ -3,18 +3,11 @@
 /*===========================================*/
 // Variables
 /*===========================================*/
-$minWidth: 320px;
-$maxWidth: 1152;
-// Main content area width
-$maxWidthContainer: 856;
-// Header menu width
-$headerMaxWidth: 1032;
+$min-width: 320px;
+$wrapper: 1152;
+$main-content-container: 1057;
 
 // =======================
-$md1: $maxWidthContainer + 12;
-$md2: 992;
-$md3: 768;
-$md4: 480;
 // =======================
 // Breakpoints
 $breakpoints: (
@@ -69,19 +62,19 @@ html {
     // @media (max-width: ($md2+px)) {
     //     font-size: calc(11 / 16) * 100%;
     // }
-    @media (max-width: ($md1 + px)) {
+    @media (max-width: ($desktopRem*10 + px)) {
         font-size: calc(10 / 16) * 100% !important;
     }
-    @media (max-width: ($md3+px)) {
+    @media (max-width: ($tabletRem*10+px)) {
         font-size: calc(9 / 16) * 100% !important;
     }
-    @media (max-width: ($md4+px)) {
+    @media (max-width: ($phoneRem+px)) {
         font-size: calc(8 / 16) * 100% !important;
     }
 }
 
 // Default font-family
-$fontFamily: "Heebo";
+$fontFamily: "Rubik";
 
 body {
     ul {
@@ -92,6 +85,7 @@ body {
     }
     font-family: $fontFamily, sans-serif;
     line-height: 1;
+    font-size: 1.2rem;
     font-weight: 400;
     color: $cDark;
 }
@@ -142,67 +136,58 @@ body {
 }
 /*===========================================*/
 %main-adaptive-grid {
-    padding: 0 3rem;
-    $starting-width: calc($maxWidthContainer / 10);
     @include mq(phone) {
         //400px
-        min-width: $starting-width + rem;
     }
     @include mq(phone-wide) {
         //480px
-        min-width: calc($phone-wideRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($phone-wideRem * $main-content-container/ $phoneRem) +
+            rem;
     }
     @include mq(phablet) {
         //560px
-        min-width: calc($phabletRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($phabletRem * $main-content-container/ $phoneRem) + rem;
     }
     @include mq(tablet-small) {
         //640px
-        min-width: calc($tablet-smallRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($tablet-smallRem * $main-content-container/ $phoneRem) +
+            rem;
     }
     @include mq(tablet) {
         //768px
-        min-width: calc($tabletRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($tabletRem * $main-content-container/ $phoneRem) + rem;
     }
     @include mq(tablet-wide) {
         //1024px
-        min-width: calc($tablet-wideRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($tablet-wideRem * $main-content-container/ $phoneRem) +
+            rem;
     }
     @include mq(desktop) {
         //1248px
-        min-width: calc($desktopRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($desktopRem * $main-content-container/ $phoneRem) + rem;
     }
     @include mq(desktop-wide) {
         //1440px
-        min-width: calc($desktop-wideRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($desktop-wideRem * $main-content-container/ $phoneRem) +
+            rem;
     }
 }
 /*===========================================*/
 %main-adaptive-grid-desktop {
-    padding: 0 3rem;
-    $starting-width: calc($maxWidthContainer / 10);
-    $ratio: calc($starting-width / $desktopRem);
-
+    $ratio: 1;
     // ---------------------------
     @media (width >= 1440px) {
-        margin: 0 22vw;
     }
     @media (width >= 1660px) {
-        margin: 0 25vw;
     }
     @media (width >= 1860px) {
-        margin: 0 29vw;
     }
     // ---------------------------
     @include mq(desktop-wide, max) {
         //1440px
-        max-width: calc($desktop-wideRem * $ratio) + rem;
-        // margin: 0 29rem;
     }
     @include mq(desktop, max) {
-        //1248px
         max-width: calc($desktopRem * $ratio) + rem;
-        // margin: 0 29rem;
     }
     @include mq(tablet-wide, max) {
         //1024px

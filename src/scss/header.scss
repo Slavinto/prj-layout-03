@@ -4,7 +4,7 @@
     &__menu {
         padding: 0 1rem;
         display: inline-flex;
-        @media (max-width: ($md3+px)) {
+        @media (max-width: ($main-content-container+px)) {
             height: 5rem;
         }
         @extend %header-template;
@@ -16,7 +16,7 @@
     &__icon {
         display: none;
         // @extend %header-template;
-        @media (max-width: ($md3+px)) {
+        @media (max-width: ($main-content-container+px)) {
             display: block;
             position: absolute;
             top: -0.5rem;
@@ -62,7 +62,7 @@
     // .menu__body
 
     &__body {
-        @media (max-width: ($md3+px)) {
+        @media (max-width: ($main-content-container+px)) {
             transform: translateY(-100%);
             padding: 9rem;
             width: 100%;
@@ -95,7 +95,7 @@
         justify-content: flex-end;
         // width: 100%;
         // height: 100%;
-        @media (max-width: ($md3+px)) {
+        @media (max-width: ($main-content-container+px)) {
             align-items: center;
             flex-direction: column;
         }
@@ -104,7 +104,7 @@
     // .menu__link
 
     &__link a {
-        @media (max-width: ($md3+px)) {
+        @media (max-width: ($main-content-container+px)) {
             .link__text {
                 font-size: 3.2rem;
             }
@@ -143,7 +143,7 @@ Burger menu styles
 
 .icon-menu {
     display: none;
-    @media (max-width: ($md3+rem)) {
+    @media (max-width: ($main-content-container+rem)) {
         display: block;
         position: absolute;
         top: 1.8rem;

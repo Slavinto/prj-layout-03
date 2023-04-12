@@ -132,7 +132,50 @@ body {
 
 // Main adaptive container
 ._container {
-    @extend %main-adaptive-grid-desktop;
+    @extend %container-current;
+}
+/*===========================================*/
+// Container current
+/*===========================================*/
+%container-current {
+    $ratio: 1;
+    background-color: antiquewhite;
+    // padding: 0 10rem;
+    height: 10vh;
+    $curwidth: calc($main-content-container / 10);
+    // ---------------------------
+
+    @include mq(desktop, max) {
+        max-width: calc($curwidth * $ratio) + rem;
+    }
+    @include mq(tablet-wide, max) {
+        //1024px
+        max-width: calc($tablet-wideRem * $ratio) + rem;
+    }
+    @include mq(tablet, max) {
+        //768px
+        max-width: calc($tabletRem * $ratio) + rem;
+    }
+    @include mq(tablet-small, max) {
+        //640px
+        max-width: calc($tablet-smallRem * $ratio) + rem;
+    }
+    @include mq(phablet, max) {
+        //560px
+        max-width: calc($phabletRem * $ratio + 16) + rem;
+    }
+    @include mq(phone-wide, max) {
+        //480px
+        max-width: calc($phone-wideRem * $ratio + 16) + rem;
+    }
+    @include mq(phone, max) {
+        //400px
+        max-width: calc($phoneRem * $ratio + 16) + rem;
+    }
+    @media (width <= 380px) {
+        // padding: 0;
+        // margin: 0;
+    }
 }
 /*===========================================*/
 %main-adaptive-grid {

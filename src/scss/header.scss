@@ -1,14 +1,67 @@
 .header {
+    @extend %full-width-flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    min-height: 11.4rem;
+
+    // .header__logo
+
+    &__logo {
+    }
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
     // .header__menu
 
     &__menu {
+        margin-left: auto;
         padding: 0 1rem;
         display: inline-flex;
-        @media (max-width: ($main-content-container+px)) {
+        @media (max-width: (calc($tabletRem*10)+px)) {
             height: 5rem;
         }
-        @extend %header-template;
+        display: block;
+        // position: absolute;
+        top: 3.6rem;
+        right: 4rem;
+        height: 1.8rem;
+        z-index: 10;
     }
+
+    // .header__btn
+
+    &__btn {
+        flex: 0 0 25.2rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__btn-link {
+        &:link,
+        &:visited {
+            @extend %btn;
+            color: #fcfdfe;
+        }
+        &:hover,
+        &:active {
+            @extend %btn;
+        }
+    }
+}
+
+._c-blue {
+    background-color: $cBlue;
+}
+._c-red {
+    background-color: $cPrimary;
+}
+
+%btn {
+    display: inline-block;
+    font-family: "Raleway";
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 1.2rem 2.8rem;
+    border-radius: 5px;
+    letter-spacing: 0.14em;
 }
 .menu {
     // .menu__icon
@@ -16,7 +69,7 @@
     &__icon {
         display: none;
         // @extend %header-template;
-        @media (max-width: ($main-content-container+px)) {
+        @media (max-width: (calc($tabletRem*10)+px)) {
             display: block;
             position: absolute;
             top: -0.5rem;
@@ -62,7 +115,7 @@
     // .menu__body
 
     &__body {
-        @media (max-width: ($main-content-container+px)) {
+        @media (max-width: (calc($tabletRem*10)+px)) {
             transform: translateY(-100%);
             padding: 9rem;
             width: 100%;
@@ -90,12 +143,10 @@
         position: relative;
         z-index: 10;
         display: flex;
-        gap: 3.3rem;
+        gap: 4rem;
         align-items: center;
         justify-content: flex-end;
-        // width: 100%;
-        // height: 100%;
-        @media (max-width: ($main-content-container+px)) {
+        @media (max-width: (calc($tabletRem*10)+px)) {
             align-items: center;
             flex-direction: column;
         }
@@ -104,16 +155,28 @@
     // .menu__link
 
     &__link a {
-        @media (max-width: ($main-content-container+px)) {
+        @media (max-width: (calc($tabletRem*10)+px)) {
             .link__text {
-                font-size: 3.2rem;
+                font-family: "Raleway";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 1rem;
+                line-height: 1.2rem;
+                /* identical to box height */
+
+                letter-spacing: 0.14em;
             }
         }
         &:link,
         &:visited {
-            font-weight: 500;
-            font-size: 2rem;
-            color: $cDark;
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.2rem;
+            /* identical to box height */
+
+            letter-spacing: 0.14em;
             transition: color 0.3s;
         }
         &:hover,
@@ -124,26 +187,13 @@
         }
     }
 }
-.icon-menu {
-}
-
-// Header menu style template
-%header-template {
-    display: block;
-    position: absolute;
-    top: 3.6rem;
-    right: 4rem;
-    width: 3rem;
-    height: 1.8rem;
-    z-index: 10;
-}
 
 /*
 Burger menu styles
 
 .icon-menu {
     display: none;
-    @media (max-width: ($main-content-container+rem)) {
+    @media (max-width: (calc($tabletRem*10)+rem)) {
         display: block;
         position: absolute;
         top: 1.8rem;

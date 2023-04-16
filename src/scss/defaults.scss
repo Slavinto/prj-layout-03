@@ -121,9 +121,16 @@ body {
     min-height: 100%;
     overflow: hidden;
     flex-direction: column;
+}
 
-    // &._loaded {
-    // }
+%btn {
+    display: inline-block;
+    font-family: "Raleway";
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 1.5rem 2.8rem;
+    border-radius: 5px;
+    letter-spacing: 0.14em;
 }
 
 main {
@@ -147,12 +154,12 @@ main {
 /*===========================================*/
 %container-current {
     $ratio: 1;
-    background-color: antiquewhite;
-    // padding: 0 10rem;
+    background-color: $cContainerBg;
+    padding: 0 1.5rem;
     $curwidth: calc($main-content-container / 10);
     // ---------------------------
 
-    @media (width > ($curwidth*10+px)) {
+    @media (width >= ($desktopRem*10-1+px)) {
         max-width: calc($curwidth * $ratio) + rem;
     }
 

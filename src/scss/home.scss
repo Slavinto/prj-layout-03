@@ -1,3 +1,150 @@
 //=================================================
 // Home Section Boilerplate
 //=================================================
+.hero {
+    z-index: 50;
+    padding-top: 3rem;
+    @extend %full-width-flex;
+    justify-content: space-between;
+    gap: 8rem;
+    align-items: center;
+    @include mq(tablet-wide, max) {
+        gap: 4rem;
+    }
+    @include mq(tablet, max) {
+        padding-top: 5rem;
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+    .hero__main-text {
+        flex: 1 0 auto;
+
+        padding-top: 9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        @include mq(tablet, max) {
+            padding-top: 0;
+            text-align: center;
+        }
+    }
+
+    // .hero__title
+
+    &__title {
+        font-weight: 700;
+        font-size: 4.4rem;
+        line-height: 5.5rem;
+        @include mq(tablet-wide, max) {
+            font-size: 3rem;
+            line-height: 3.3rem;
+        }
+        @include mq(tablet, max) {
+            font-size: 4.4rem;
+            line-height: 5.5rem;
+            align-self: center;
+        }
+    }
+
+    // .hero__description
+
+    &__description {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        color: $cGreyText;
+        @include mq(tablet-wide, max) {
+            font-size: 1rem;
+            line-height: 1.1rem;
+        }
+    }
+
+    // .hero__cta
+
+    &__cta {
+        @extend %btn;
+        align-self: flex-start;
+        color: $cLightText;
+        background-color: $cRed;
+        transition: all 0.3s;
+        &:link,
+        &:visited {
+        }
+        &:hover,
+        &:active {
+            background-color: $cPrimary;
+        }
+        @include mq(tablet-wide, max) {
+            font-size: 0.8rem;
+        }
+        @include mq(tablet, max) {
+            align-self: center;
+        }
+    }
+
+    // .hero__video
+
+    &__video {
+        display: flex;
+        align-items: center;
+    }
+
+    // .hero__main-img
+
+    &__main-img {
+        display: inline-flex;
+        align-self: flex-start;
+        flex: 0 1 50%;
+        @include mq(tablet-wide, max) {
+            transform: scale(0.9);
+        }
+        @include mq(tablet, max) {
+            align-self: center;
+            order: -1;
+        }
+    }
+}
+.main-video {
+    padding-top: 14rem;
+    display: flex;
+    gap: 1rem;
+    &__description {
+        @include mq(tablet, max) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    @include mq(tablet, max) {
+        padding-top: 2rem;
+        align-self: center;
+    }
+
+    // .main-video__title
+
+    &__title {
+        padding-bottom: 1rem;
+        font-weight: 400;
+        font-size: 1.3rem;
+        color: $cGreyText2;
+    }
+
+    // .main-video__link
+
+    &__link {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        &:link,
+        &:visited {
+            color: #000;
+        }
+        &:hover,
+        &:active {
+        }
+    }
+}
+._blue-text {
+    color: $cBlue;
+}

@@ -1,29 +1,50 @@
 .header {
     @extend %full-width-flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
     min-height: 11.4rem;
+    z-index: 5;
+    @media (max-width: (calc($tabletRem*10)+px)) {
+        flex-direction: column;
+    }
+
+    .pane-right_red {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        width: 27.5rem;
+        height: 70rem;
+        background-color: $cPrimary;
+    }
+    // position: absolute;
+    // width: 100%;
+    // top: 0;
+    // left: 0;
+    // z-index: 50;
 
     // .header__logo
 
     &__logo {
+        @media (max-width: (calc($tabletRem*10)+px)) {
+            align-self: flex-start;
+        }
     }
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
+
     // .header__menu
 
     &__menu {
         margin-left: auto;
         padding: 0 1rem;
-        display: inline-flex;
+        display: flex;
         @media (max-width: (calc($tabletRem*10)+px)) {
-            height: 5rem;
+            // height: 5rem;
+            order: 1;
+            margin-left: 0;
         }
-        display: block;
-        // position: absolute;
-        top: 3.6rem;
-        right: 4rem;
-        height: 1.8rem;
         z-index: 10;
     }
 
@@ -33,47 +54,40 @@
         flex: 0 0 25.2rem;
         display: flex;
         justify-content: flex-end;
+        @media (max-width: (calc($tabletRem*10)+px)) {
+            flex: 0 1 auto;
+        }
     }
     &__btn-link {
+        background-color: $cBlue;
+        transition: all 0.3s;
         &:link,
         &:visited {
             @extend %btn;
-            color: #fcfdfe;
+            color: $cLightText;
         }
         &:hover,
         &:active {
             @extend %btn;
+            background-color: $cBlueShade1;
         }
     }
 }
 
-._c-blue {
-    background-color: $cBlue;
-}
-._c-red {
-    background-color: $cPrimary;
+._menu-btn {
+    display: none;
 }
 
-%btn {
-    display: inline-block;
-    font-family: "Raleway";
-    font-weight: 800;
-    font-size: 1rem;
-    padding: 1.2rem 2.8rem;
-    border-radius: 5px;
-    letter-spacing: 0.14em;
-}
 .menu {
     // .menu__icon
-
     &__icon {
         display: none;
         // @extend %header-template;
         @media (max-width: (calc($tabletRem*10)+px)) {
             display: block;
             position: absolute;
-            top: -0.5rem;
-            right: -1rem;
+            top: 2.1rem;
+            right: 3.5rem;
             width: 3rem;
             height: 0.8rem;
             z-index: 10;
@@ -98,6 +112,7 @@
         }
         &._active {
             span {
+                background-color: $cLightText;
                 z-index: 10;
                 transform: scale(0);
                 &:first-child {
@@ -133,6 +148,24 @@
 
             &._active {
                 transform: translateY(0);
+                .menu {
+                    &__list {
+                        .header__btn {
+                            display: flex;
+                        }
+                    }
+                    &__link a {
+                        color: $cLightText;
+                        &:link,
+                        &:visited {
+                            font-size: 2rem;
+                        }
+                        &:hover,
+                        &:active {
+                            color: $cPrimary;
+                        }
+                    }
+                }
             }
         }
     }
@@ -144,8 +177,6 @@
         z-index: 10;
         display: flex;
         gap: 4rem;
-        align-items: center;
-        justify-content: flex-end;
         @media (max-width: (calc($tabletRem*10)+px)) {
             align-items: center;
             flex-direction: column;
@@ -161,28 +192,25 @@
                 font-style: normal;
                 font-weight: 700;
                 font-size: 1rem;
-                line-height: 1.2rem;
-                /* identical to box height */
-
+                color: #000;
                 letter-spacing: 0.14em;
             }
         }
+        color: $cDark;
+
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1rem;
+
+        letter-spacing: 0.14em;
+        transition: all 0.3s;
         &:link,
         &:visited {
-            font-family: "Raleway";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 1rem;
-            line-height: 1.2rem;
-            /* identical to box height */
-
-            letter-spacing: 0.14em;
-            transition: color 0.3s;
+            // font-size: 2rem;
         }
         &:hover,
         &:active {
-            font-weight: 500;
-            font-size: 2rem;
             color: $cPrimary;
         }
     }

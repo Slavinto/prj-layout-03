@@ -5,24 +5,41 @@
     <body>
         <div class="wrapper">
             @@include('./html/header.html', {})
-            <main class="_container _centered">
-                <p class="main-text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Modi provident beatae, consectetur odio corrupti ipsam
-                    quisquam non quasi vitae itaque, vel magni inventore facilis
-                    consequuntur minima repudiandae harum magnam laborum esse.
-                    Est expedita quibusdam in quaerat cum atque. Architecto
-                    voluptatibus suscipit iste impedit, fugiat iure at
-                    temporibus accusamus fuga! Ipsa, voluptates rem nulla libero
-                    in impedit incidunt quam illum quisquam dignissimos tenetur
-                    odio exercitationem saepe atque architecto consequatur ab
-                    possimus velit? Eos repellendus similique magni harum,
-                    praesentium quisquam adipisci sed non unde. Sequi minus
-                    accusamus dolor minima alias at est facere numquam
-                    reiciendis odio nobis voluptatum, debitis dolores voluptates
-                    ratione.
-                </p>
-            </main>
+            <section class="hero _container _centered">
+                <article class="hero__main-text">
+                    <h1 class="hero__title">
+                        Take care of your <br />family’s
+                        <span class="_blue-text">health.</span>
+                    </h1>
+                    <p class="hero__description">
+                        All in one destination for COVID-19 health queries.
+                        <br />Consult 10,000+ health workers about your
+                        concerns.
+                    </p>
+                    <a href="#" class="hero__cta">GET STARTED</a>
+                    <figure class="hero__video main-video">
+                        <a href="#" class="main-video__link">
+                            <img
+                                src="@img/hero/play-btn.svg"
+                                alt="media player button"
+                            />
+                        </a>
+                        <div class="main-video__description">
+                            <h4 class="main-video__title">
+                                Stay safe with GoCorona
+                            </h4>
+                            <a href="#" class="main-video__link">Watch Video</a>
+                        </div>
+                    </figure>
+                </article>
+                <picture class="hero__main-img">
+                    <img
+                        class="_adaptive"
+                        src="@img/hero/hero-main.svg"
+                        alt="doctor with girl pacient"
+                    />
+                </picture>
+            </section>
             @@include('./html/footer.html', {})
         </div>
         <script src="js/app.min.js"></script>

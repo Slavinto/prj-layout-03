@@ -6,8 +6,9 @@
     padding-top: 3rem;
     @extend %full-width-flex;
     justify-content: space-between;
-    gap: 8rem;
+    // gap: 8rem;
     align-items: center;
+    flex-wrap: wrap;
     @include mq(tablet-wide, max) {
         gap: 4rem;
     }
@@ -106,7 +107,7 @@
     }
 }
 .main-video {
-    padding-top: 14rem;
+    padding-top: 6rem;
     display: flex;
     gap: 1rem;
     &__description {
@@ -128,6 +129,7 @@
         font-weight: 400;
         font-size: 1.3rem;
         color: $cGreyText2;
+        letter-spacing: 0.08em;
     }
 
     // .main-video__link
@@ -135,7 +137,7 @@
     &__link {
         font-size: 0.9rem;
         text-transform: uppercase;
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.165em;
         &:link,
         &:visited {
             color: #000;

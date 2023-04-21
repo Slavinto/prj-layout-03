@@ -4,42 +4,71 @@
     @@include('./html/head.html', { "title": "Main Page" })
     <body>
         <div class="wrapper">
-            @@include('./html/header.html', {})
-            <section class="hero _container _centered">
-                <article class="hero__main-text">
-                    <h1 class="hero__title">
-                        Take care of your <br />family’s
-                        <span class="_blue-text">health.</span>
-                    </h1>
-                    <p class="hero__description">
-                        All in one destination for COVID-19 health queries.
-                        <br />Consult 10,000+ health workers about your
-                        concerns.
-                    </p>
-                    <a href="#" class="hero__cta">GET STARTED</a>
-                </article>
-                <picture class="hero__main-img">
-                    <img
-                        class="_adaptive"
-                        src="@img/hero/hero-main.svg"
-                        alt="doctor with girl pacient"
-                    />
-                </picture>
-                <figure class="hero__video main-video">
-                    <a href="#" class="main-video__link">
+            <div class="top-content _centered">
+                @@include('./html/header.html', {})
+                <section class="hero _container _centered">
+                    <article class="hero__main-text article">
+                        <h1 class="article__title">
+                            Take care of your <br />family’s
+                            <span class="_blue-text">health.</span>
+                        </h1>
+                        <p class="article__description">
+                            All in one destination for COVID-19 health queries.
+                            <br />Consult 10,000+ health workers about your
+                            concerns.
+                        </p>
+                        <a href="#" class="article__cta">GET STARTED</a>
+                    </article>
+                    <picture class="hero__main-img">
                         <img
-                            src="@img/hero/play-btn.svg"
-                            alt="media player button"
+                            class="_adaptive"
+                            src="@img/hero/hero-main.svg"
+                            alt="doctor with girl pacient"
                         />
-                    </a>
-                    <div class="main-video__description">
-                        <h4 class="main-video__title">
-                            Stay safe with GoCorona
-                        </h4>
-                        <a href="#" class="main-video__link">Watch Video</a>
-                    </div>
+                    </picture>
+                    <figure class="hero__video main-video">
+                        <a href="#" class="main-video__link">
+                            <img
+                                src="@img/hero/play-btn.svg"
+                                alt="media player button"
+                            />
+                        </a>
+                        <div class="main-video__description">
+                            <h4 class="main-video__title">
+                                Stay safe with GoCorona
+                            </h4>
+                            <a href="#" class="main-video__link">Watch Video</a>
+                        </div>
+                    </figure>
+                </section>
+            </div>
+            <section class="stay-safe _container _centered">
+                <figure class="stay-safe__app app-start">
+                    <picture class="app-start__screen">
+                        <div class="app-start__rect_big _adaptive"></div>
+                        <div class="app-start__rect_small-left"></div>
+                        <div class="app-start__rect_small-right"></div>
+                        <img
+                            src="@img/stay-safe/app-start.png"
+                            alt="application start screen"
+                            class=""
+                        />
+                        <div class="app-start__rect_shadow"></div>
+                    </picture>
                 </figure>
+                <article class="stay-safe__main-text article">
+                    <h2 class="article__title">
+                        Stay safe with<br />Go<span>Corona.</span>
+                    </h2>
+                    <p class="article__description">
+                        24x7 Support and user friendly mobile platform to bring
+                        healthcare to your fingertips. Signup and be a part of
+                        the new health culture.
+                    </p>
+                    <a href="#" class="article__cta">FEATURES</a>
+                </article>
             </section>
+
             @@include('./html/footer.html', {})
         </div>
         <script src="js/app.min.js"></script>

@@ -1,7 +1,16 @@
 //=================================================
 // Home Section Boilerplate
 //=================================================
+.top-content {
+    position: relative;
+    background-color: $cContainerBg;
+}
+
 .hero {
+    &::before {
+        @extend %right-pane;
+        border-radius: 0 0 0 3rem;
+    }
     z-index: 50;
     padding-top: 3rem;
     @extend %full-width-flex;
@@ -14,74 +23,8 @@
     }
     @include mq(tablet, max) {
         padding-top: 5rem;
-        gap: 2rem;
+        gap: 0;
         flex-direction: column;
-    }
-
-    .hero__main-text {
-        flex: 1 0 auto;
-
-        padding-top: 9rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        @include mq(tablet, max) {
-            padding-top: 0;
-            text-align: center;
-        }
-    }
-
-    // .hero__title
-
-    &__title {
-        font-weight: 700;
-        font-size: 4.4rem;
-        line-height: 5.5rem;
-        @include mq(tablet-wide, max) {
-            font-size: 3rem;
-            line-height: 3.3rem;
-        }
-        @include mq(tablet, max) {
-            font-size: 4.4rem;
-            line-height: 5.5rem;
-            align-self: center;
-        }
-    }
-
-    // .hero__description
-
-    &__description {
-        font-weight: 400;
-        font-size: 1.2rem;
-        line-height: 1.7rem;
-        color: $cGreyText;
-        @include mq(tablet-wide, max) {
-            font-size: 1rem;
-            line-height: 1.1rem;
-        }
-    }
-
-    // .hero__cta
-
-    &__cta {
-        @extend %btn;
-        align-self: flex-start;
-        color: $cLightText;
-        background-color: $cRed;
-        transition: all 0.3s;
-        &:link,
-        &:visited {
-        }
-        &:hover,
-        &:active {
-            background-color: $cPrimary;
-        }
-        @include mq(tablet-wide, max) {
-            font-size: 0.8rem;
-        }
-        @include mq(tablet, max) {
-            align-self: center;
-        }
     }
 
     // .hero__video
@@ -97,6 +40,7 @@
         display: inline-flex;
         align-self: flex-start;
         flex: 0 1 50%;
+        z-index: 60;
         @include mq(tablet-wide, max) {
             transform: scale(0.9);
         }
@@ -106,19 +50,96 @@
         }
     }
 }
+
+.article {
+    padding-top: 9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 38rem;
+    height: 24rem;
+
+    @include mq(tablet, max) {
+        padding: 0 0 2rem 0;
+        height: 20rem;
+        text-align: center;
+    }
+    // .article__title
+
+    &__title {
+        font-weight: 700;
+        font-size: 4.4rem;
+        line-height: 5.5rem;
+        @include mq(tablet-wide, max) {
+            font-size: 4rem;
+            line-height: 4.5rem;
+        }
+        @include mq(tablet, max) {
+            font-size: 3.5rem;
+            line-height: 4rem;
+            align-self: center;
+        }
+        @include mq(phone-wide, max) {
+            font-size: 2.8rem;
+            line-height: 3.4rem;
+            align-self: center;
+        }
+    }
+
+    // .article__description
+
+    &__description {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        color: $cGreyText;
+        @include mq(tablet-wide, max) {
+            font-size: 1rem;
+            line-height: 1.1rem;
+        }
+    }
+
+    // .article__cta
+
+    &__cta {
+        @extend %btn;
+        align-self: flex-start;
+        color: $cLightText;
+        background-color: $cRed;
+        transition: all 0.3s;
+        display: block;
+        &:link,
+        &:visited {
+        }
+        &:hover,
+        &:active {
+            background-color: $cPrimary;
+        }
+        @include mq(tablet-wide, max) {
+            font-size: 0.8rem;
+        }
+        @include mq(tablet, max) {
+            align-self: center;
+        }
+    }
+}
+
 .main-video {
-    padding-top: 6rem;
+    padding: 6rem 0 4.8rem 0;
     display: flex;
     gap: 1rem;
+    @include mq(tablet, max) {
+        flex-direction: column;
+    }
     &__description {
         @include mq(tablet, max) {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
         }
     }
     @include mq(tablet, max) {
-        padding-top: 2rem;
+        padding: 0;
         align-self: center;
     }
 
@@ -149,4 +170,139 @@
 }
 ._blue-text {
     color: $cBlue;
+}
+
+.stay-safe {
+    width: 100%;
+    display: flex;
+    @include mq(tablet, max) {
+        gap: 4rem;
+    }
+    align-items: center;
+
+    @include mq(tablet, max) {
+        flex-direction: column;
+    }
+
+    // .stay-safe__app
+
+    &__app {
+        min-width: 50%;
+        // padding: 12.5rem 0 9.5rem 0;
+        @include mq(tablet, max) {
+            // padding: 5rem 0 5rem 0;
+        }
+    }
+
+    // .stay-safe__main-text
+
+    &__main-text {
+        // max-width: 50%;
+        padding: 3.5rem 0 3.5rem;
+        margin-bottom: 7rem;
+        @include mq(tablet, max) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+%rect_red {
+    position: absolute;
+    background-color: $cRed;
+    border-radius: 3rem;
+    z-index: -1;
+}
+
+.app-start {
+    // .app-start__rect
+
+    &__rect {
+        // .app-start__rect_big
+
+        &_big {
+            @extend %rect_red;
+            top: 0;
+            left: 0;
+            max-width: 14.7rem;
+            max-height: 14.7rem;
+        }
+
+        // .app-start__rect_small-left
+
+        &_small-left {
+            @extend %rect_red;
+            width: 7.7rem;
+            height: 7.7rem;
+            bottom: 0;
+            left: 3.2rem;
+        }
+
+        // .app-start__rect_small-right
+
+        &_small-right {
+            @extend %rect_red;
+            bottom: 11.3rem;
+            right: 0;
+            width: 7.7rem;
+            height: 7.7rem;
+        }
+    }
+
+    // .app-start__screen
+
+    &__screen {
+        position: relative;
+        width: 34rem;
+        height: 54.2rem;
+
+        display: block;
+        margin-top: 5.6rem;
+        margin: 5.6rem 0 0 4rem;
+        @include mq(tablet, max) {
+            margin: 0;
+        }
+        z-index: 5;
+        border-radius: 1rem;
+        img {
+            // box-shadow: 0.3rem -0.3rem 1.7rem 0.8rem rgba(0, 0, 0, 0.1);
+            position: absolute;
+            z-index: 10;
+            object-fit: contain;
+            border-radius: 2rem;
+            top: 5rem;
+            left: 7rem;
+        }
+    }
+
+    &__rect_shadow {
+        position: absolute;
+        width: 96%;
+        height: 100%;
+        top: -0.4rem;
+        left: 0.5rem;
+        border-radius: 2.3rem;
+        z-index: 6;
+        opacity: 0.5;
+        box-shadow: 0 2rem 0 0rem $cAppShadow;
+    }
+}
+
+.article {
+    // .article__title
+
+    &__title {
+        span {
+            color: $cRed;
+        }
+    }
+
+    // .article__description
+
+    &__description {
+    }
+
+    // .article__cta
+
+    &__cta {
+    }
 }

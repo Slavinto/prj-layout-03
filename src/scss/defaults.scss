@@ -121,6 +121,7 @@ body {
     min-height: 100%;
     overflow: hidden;
     flex-direction: column;
+    gap: 8rem;
 }
 
 %btn {
@@ -154,7 +155,6 @@ main {
 /*===========================================*/
 %container-current {
     $ratio: 1;
-    background-color: $cContainerBg;
     padding: 0 1.5rem;
     $curwidth: calc($main-content-container / 10);
     // ---------------------------

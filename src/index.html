@@ -48,12 +48,14 @@
                         <div class="app-start__rect_big _adaptive"></div>
                         <div class="app-start__rect_small-left"></div>
                         <div class="app-start__rect_small-right"></div>
-                        <img
-                            src="@img/stay-safe/app-start.png"
-                            alt="application start screen"
-                            class=""
-                        />
-                        <div class="app-start__rect_shadow"></div>
+                        <div class="app-img-container">
+                            <img
+                                src="@img/stay-safe/app-start.png"
+                                alt="application start screen"
+                                class="app-start__image"
+                            />
+                            <!-- <div class="app-start__rect_shadow"></div> 
+                        --></div>
                     </picture>
                 </figure>
                 <article class="stay-safe__main-text article">
@@ -68,7 +70,46 @@
                     <a href="#" class="article__cta">FEATURES</a>
                 </article>
             </section>
-
+            <section class="experts _container _centered">
+                <div class="experts__stats _centered">
+                    <div class="experts__stats-card">
+                        <div class="experts__stats-card__stat stat">
+                            <h3 class="stat__title">2m</h3>
+                            <p class="stat__text">Users</p>
+                        </div>
+                        <div class="experts__stats-card__stat stat">
+                            <h3 class="stat__title">78</h3>
+                            <p class="stat__text">Countries</p>
+                        </div>
+                        <div class="experts__stats-card__stat stat">
+                            <h3 class="stat__title">10,000+</h3>
+                            <p class="stat__text">Medical Experts</p>
+                        </div>
+                    </div>
+                    <div class="experts__stats-rect_small"></div>
+                    <div class="experts__stats-rect_med"></div>
+                    <div class="experts__stats-rect_big"></div>
+                </div>
+                <div class="experts__talk-to">
+                    <article class="experts__main-text article">
+                        <h2 class="article__title">
+                            Talk to <span>experts.</span>
+                        </h2>
+                        <p class="article__description">
+                            Book appointments or submit queries into thousands
+                            of forums concerning health issues and prevention
+                            against noval Corona Virus.
+                        </p>
+                        <a href="#" class="article__cta">FEATURES</a>
+                    </article>
+                    <div class="experts__video">
+                        <img
+                            src="@img/experts/experts-video.svg"
+                            alt="presentation video"
+                        />
+                    </div>
+                </div>
+            </section>
             @@include('./html/footer.html', {})
         </div>
         <script src="js/app.min.js"></script>

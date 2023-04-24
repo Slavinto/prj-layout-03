@@ -1,0 +1,141 @@
+.experts {
+    width: 100%;
+    text-align: center;
+    background-color: $cContainerBg;
+
+    // .experts__stats
+
+    &__stats {
+        position: relative;
+        display: inline-flex;
+        margin-top: 10rem;
+    }
+
+    // .experts__stats-card
+
+    &__stats-card {
+        position: relative;
+        z-index: 10;
+        width: 65.4rem;
+        height: 11.7rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0px 2px 24px rgba(88, 126, 236, 0.15);
+        background-color: #fff;
+        border-radius: 1.6rem;
+    }
+
+    // .experts__stats-rect
+
+    &__stats-rect {
+        // .experts__stats-rect_small
+
+        &_small {
+            @extend %rect_red;
+            width: 6.5rem;
+            height: 6.5rem;
+            left: -2rem;
+            top: 7rem;
+
+            border-radius: 1.6rem;
+            transform: rotate(-30deg);
+            z-index: 5;
+        }
+
+        // .experts__stats-rect_med
+
+        &_med {
+            @extend %rect_red;
+            width: 9.7rem;
+            height: 9.7rem;
+            left: 22rem;
+            top: -4rem;
+
+            transform: rotate(105deg);
+            z-index: 5;
+        }
+
+        // .experts__stats-rect_big
+
+        &_big {
+            @extend %rect_red;
+            width: 12.8rem;
+            height: 12.8rem;
+            left: 58rem;
+            top: 0rem;
+
+            transform: rotate(-30deg);
+            z-index: 5;
+        }
+    }
+
+    // .experts__talk-to
+
+    &__talk-to {
+        padding: 7.9rem 3.5rem 11.6rem 3.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        article {
+            padding: 0;
+            height: 100%;
+        }
+    }
+
+    // .experts__video
+
+    &__video {
+        width: 52.1rem;
+        height: 28.4rem;
+        border-radius: 0.8rem;
+    }
+
+    // .experts__main-text
+
+    &__main-text {
+        text-align: left;
+        span {
+            color: $cBlueText;
+        }
+    }
+}
+
+.stat {
+    // .stat__title
+
+    &__title {
+        font-weight: 700;
+        font-size: 3.6rem;
+        line-height: 4.3rem;
+        color: $cRed;
+        letter-spacing: 0.14em;
+    }
+
+    // .stat__text
+
+    &__text {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+        letter-spacing: 0.37em;
+    }
+}
+
+.article {
+    // .article__title
+
+    &__title {
+    }
+
+    // .article__description
+
+    &__description {
+    }
+
+    // .article__cta
+
+    &__cta {
+    }
+}

@@ -65,11 +65,17 @@ html {
     @media (max-width: ($desktopRem*10 + px)) {
         font-size: calc(10 / 16) * 100% !important;
     }
+    @media (max-width: ($tablet-wideRem*10 + px)) {
+        font-size: calc(8.5 / 16) * 100% !important;
+    }
     @media (max-width: ($tabletRem*10+px)) {
-        font-size: calc(9 / 16) * 100% !important;
+        font-size: calc(7.5 / 16) * 100% !important;
+    }
+    @media (max-width: ($phone-wideRem+px)) {
+        font-size: calc(6.5 / 16) * 100% !important;
     }
     @media (max-width: ($phoneRem+px)) {
-        font-size: calc(8 / 16) * 100% !important;
+        font-size: calc(6 / 16) * 100% !important;
     }
 }
 

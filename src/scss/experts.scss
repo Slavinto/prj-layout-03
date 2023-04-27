@@ -9,6 +9,9 @@
         position: relative;
         display: inline-flex;
         margin-top: 10rem;
+        @include mq(tablet-small, max) {
+            flex-direction: column;
+        }
     }
 
     // .experts__stats-card
@@ -24,6 +27,11 @@
         box-shadow: 0px 2px 24px rgba(88, 126, 236, 0.15);
         background-color: #fff;
         border-radius: 1.6rem;
+        @include mq(tablet-small, max) {
+            flex-direction: column;
+            width: 29.7rem;
+            height: 35.4rem;
+        }
     }
 
     // .experts__stats-rect
@@ -37,10 +45,13 @@
             height: 6.5rem;
             left: -2rem;
             top: 7rem;
-
             border-radius: 1.6rem;
             transform: rotate(-30deg);
             z-index: 5;
+            @include mq(tablet-small, max) {
+                left: -3rem;
+                top: -2rem;
+            }
         }
 
         // .experts__stats-rect_med
@@ -54,6 +65,10 @@
 
             transform: rotate(105deg);
             z-index: 5;
+            @include mq(tablet-small, max) {
+                left: 25rem;
+                top: 16rem;
+            }
         }
 
         // .experts__stats-rect_big
@@ -67,6 +82,10 @@
 
             transform: rotate(-30deg);
             z-index: 5;
+            @include mq(tablet-small, max) {
+                left: -3rem;
+                top: 27rem;
+            }
         }
     }
 
@@ -77,9 +96,16 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 5rem;
         article {
             padding: 0;
             height: 100%;
+        }
+        @include mq(tablet, max) {
+        }
+        @include mq(tablet-small, max) {
+            margin-top: 5rem;
+            flex-direction: column;
         }
     }
 
@@ -88,7 +114,24 @@
     &__video {
         width: 52.1rem;
         height: 28.4rem;
-        border-radius: 0.8rem;
+        position: relative;
+        padding: 0.2rem;
+        @include mq(tablet-small, max) {
+            width: 42.1rem;
+        }
+        @include mq(phone, max) {
+            width: 32.1rem;
+        }
+        iframe {
+            position: absolute;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            border-radius: 0.8rem;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+        }
     }
 
     // .experts__main-text

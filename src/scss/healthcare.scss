@@ -1,0 +1,190 @@
+.healthcare {
+    display: flex;
+    gap: 4.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // .healthcare__article
+
+    &__article.article {
+        flex: 1 1 auto;
+        width: 77rem;
+        height: 12rem;
+        text-align: center;
+        p {
+            padding: 0 12rem;
+        }
+
+        @include mq(phone-wide, max) {
+            width: 67rem;
+            p {
+                padding: 0 8rem;
+            }
+        }
+        @include mq(phone, max) {
+            p {
+                padding: 0;
+            }
+            width: 23rem;
+            .article__title {
+                width: 100%;
+            }
+            .article__description {
+                width: 100%;
+            }
+        }
+    }
+    // healthcare__card-rect
+
+    &__card-rect {
+    }
+
+    // .healthcare__cards
+
+    &__cards {
+    }
+
+    // .healthcare__app-markets
+
+    &__app-markets {
+        padding: 3rem 0 4.7rem;
+        display: flex;
+        gap: 5.7rem;
+        img {
+            width: 16rem;
+            height: 5.5rem;
+            object-fit: none;
+            &:last-child {
+                transform: scale(1.04);
+            }
+        }
+        @include mq(phone, max) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+}
+
+.article {
+    // .article__title
+
+    &__title {
+    }
+
+    // .article__description
+
+    &__description {
+    }
+}
+.cards {
+    display: flex;
+    gap: 7.2rem;
+    @include mq(tablet-wide, max) {
+        gap: 4.2rem;
+    }
+    @include mq(tablet, max) {
+        flex-direction: column;
+    }
+    // .cards__card
+
+    &__card {
+        position: relative;
+
+        width: 27.7rem;
+        height: 27.7rem;
+        box-shadow: 0px 0.4rem 1.8rem rgba(88, 126, 236, 0.18);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include mq(tablet-wide, max) {
+            width: 23rem;
+            height: 23rem;
+        }
+        @include mq(tablet, max) {
+            width: 30rem;
+            height: 30rem;
+        }
+    }
+}
+.card {
+    // .card__link
+
+    &__link {
+        border-radius: 0.8rem;
+        position: relative;
+        z-index: 10;
+        background-color: #fff;
+
+        padding: 3.7rem 2.6rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 100%;
+        gap: 1rem;
+        h3 {
+            color: #000;
+            line-height: 2.2rem;
+            letter-spacing: 0.08em;
+        }
+        p {
+            line-height: 1.7rem;
+            letter-spacing: 0.08em;
+            color: $cGreyText;
+        }
+    }
+
+    // .card__icon-container
+
+    &__icon-container {
+    }
+
+    // .card__icon
+
+    &__icon {
+    }
+
+    // .card__title
+
+    &__title {
+        margin-top: auto;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 138.5%;
+    }
+
+    // .card__text
+
+    &__text {
+    }
+}
+.experts {
+    // .experts__stats-rect
+
+    &__stats-rect {
+        // .experts__stats-rect_small
+
+        &_small._rect-left {
+            top: 24.5rem;
+            left: -2rem;
+        }
+
+        &_small._rect-right {
+            top: -3.3rem;
+            left: 23.4rem;
+        }
+
+        // .experts__stats-rect_med
+
+        &_med.healthcare__card-rect {
+            top: 4.5rem;
+            left: 23rem;
+        }
+
+        // .experts__stats-rect_big
+
+        &_big.healthcare__card-rect {
+            top: 17.5rem;
+            left: 22.7rem;
+        }
+    }
+}

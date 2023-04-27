@@ -12,7 +12,7 @@
     align-items: center;
     text-transform: uppercase;
     min-height: 11.4rem;
-    z-index: 50;
+    z-index: 100;
 
     @media (max-width: (calc($tabletRem*10)+px)) {
         flex-direction: column;
@@ -37,7 +37,7 @@
             order: 1;
             margin-left: 0;
         }
-        z-index: 10;
+        z-index: 100;
     }
 
     // .header__btn
@@ -68,10 +68,10 @@
 }
 
 %right-pane {
-    @media (width < 768px) {
+    @media (width < ($tablet-wideRem*10+px)) {
         display: none;
     }
-    @media (width >= 768px) {
+    @media (width >= ($tablet-wideRem*10+px)) {
         display: block;
         content: "";
         position: absolute;
@@ -100,7 +100,7 @@
             right: 3.5rem;
             width: 3rem;
             height: 0.8rem;
-            z-index: 10;
+            z-index: 100;
             transform: scale(1.4);
             cursor: pointer;
             span {
